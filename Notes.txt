@@ -2,11 +2,11 @@ Brief:
 
 Task 1
 
-1. Load and preprocess the dataset for the classification problem (handle missing data, convert categorical features to numerical features).
-2. Build a classifier for the classification problem using one of the specified models (logistic regression, decision trees, random forests, or artificial neural networks).
-3. Fine-tune the selected model using appropriate techniques (eg, hyperparameter tuning, cross-validation, etc).
-4. Visualise the dataset and / or the model's results, where applicable (eg, feature importance, confusion matrix, etc).
-5. Report the final performance of the selected model using appropriate performance metrics (eg, accuracy, F1-score, etc).
+1. (DONE) Load and preprocess the dataset for the classification problem (handle missing data, convert categorical features to numerical features).
+2. (DONE) Build a classifier for the classification problem using one of the specified models (logistic regression, decision trees, random forests, or artificial neural networks).
+3. (DONE) Fine-tune the selected model using appropriate techniques (eg, hyperparameter tuning, cross-validation, etc).
+4. (DONE) Visualise the dataset and / or the model's results, where applicable (eg, feature importance, confusion matrix, etc).
+5. (DONE) Report the final performance of the selected model using appropriate performance metrics (eg, accuracy, F1-score, etc).
 
 Task 2
 

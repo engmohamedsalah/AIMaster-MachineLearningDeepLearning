@@ -3,3 +3,21 @@ Repo initiated and discussions begin.
 
 ---
 
+30/6
+Dataset 1 is explored by both of us, including correlation factors, boxplots.
+
+---
+
+7/1
+Columns are pre-processed by both of us, including one-hot encoding, random sample imputation and MinMax scaling.
+
+---
+
+2/7
+Jack makes a decision tree and finds it effective, with max depth of 3.
+
+---
+
+6/7
+Mohamed makes a random forest ensemble and uses GridSearch to optimise parameters. Accuracy of 96.7%. Also includes confusion matrix.
+Jack adds cross validation to further verify the model.
