@@ -1,0 +1,22 @@
+Model 1:
+
+Xception
+Optimiser = Adam
+Loss = categorical_cross_entropy
+lr = 0.001
+Training Epochs = 10
+
+Data Range = 000-099
+Images per Data Category = 50
+Train:Test = 80:20
+
+Training Performance = 0.95
+Test Performance = 0.55
+
+Notes:
+- Confuses 80-89 numbers with 60-69.
+- Confuses 90-99 numbers with 40-49.
+
+---------------------------------------------------------
+
+
