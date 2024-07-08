@@ -6,6 +6,7 @@ Loss = categorical_cross_entropy
 lr = 0.001
 Training Epochs = 10
 
+Data Preprocessing = None
 Data Range = 000-099
 Images per Data Category = 50
 Train:Test = 80:20
