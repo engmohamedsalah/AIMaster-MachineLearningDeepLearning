@@ -21,3 +21,10 @@ Jack makes a decision tree and finds it effective, with max depth of 3.
 6/7
 Mohamed makes a random forest ensemble and uses GridSearch to optimise parameters. Accuracy of 96.7%. Also includes confusion matrix.
 Jack adds cross validation to further verify the model.
+
+---
+
+7/7
+Both of us work on functions to reorganise the dataset2 splits so that all the numbers are present in each set.
+
+---
