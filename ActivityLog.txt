@@ -28,3 +28,12 @@ Jack adds cross validation to further verify the model.
 Both of us work on functions to reorganise the dataset2 splits so that all the numbers are present in each set.
 
 ---
+
+8/7
+Jack tries an initial Xception model on digits 0-99 and finds it only partially effective.
+
+---
+
+13/7
+We return to utlising the data in the orginal splits provided.
+Mohamed makes a model which predicts each of the digits separately, very successful.
