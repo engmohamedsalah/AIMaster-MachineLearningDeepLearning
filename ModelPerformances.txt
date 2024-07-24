@@ -1,4 +1,4 @@
-Model 1:
+Model 1 (NOT USABLE DUE TO RESHUFFLING THE DATA SPLITS):
 
 Xception
 Optimiser = Adam
@@ -20,4 +20,136 @@ Notes:
 
 ---------------------------------------------------------
 
+Model 2:
 
+Mohamed's first model with the separate digit output channels.
+Typical CNN architecture.
+Epochs = 10.
+Thresholding of 0.85 applied to it.
+
+Test loss: 1.0561432838439941
+Test accuracy for digit 1: 0.9341999888420105
+Test accuracy for digit 2: 0.9305499792098999
+Test accuracy for digit 3: 0.9216499924659729
+
+---------------------------------------------------------
+
+Model 3:
+
+This is Mohamed's refined model, with thresholding = 0.85.
+Epochs raised to 15.
+
+    inputs = Input(shape=(84, 84, 1))
+
+    x = Conv2D(64, kernel_size=(3, 3), activation='relu')(inputs)
+    x = MaxPooling2D(pool_size=(2, 2))(x)
+    x = Dropout(0.25)(x)
+
+    x = Conv2D(64, kernel_size=(3, 3), activation='relu')(x)
+    x = MaxPooling2D(pool_size=(2, 2))(x)
+    x = Dropout(0.25)(x)
+
+    x = Conv2D(64, kernel_size=(3, 3), activation='relu')(x)
+    x = MaxPooling2D(pool_size=(2, 2))(x)
+    x = Dropout(0.25)(x)
+
+    x = Flatten()(x)
+
+    digit1 = Dense(10, activation='softmax', name='digit1')(x)
+    digit2 = Dense(10, activation='softmax', name='digit2')(x)
+    digit3 = Dense(10, activation='softmax', name='digit3')(x)
+
+Trainable parameters: 197,406
+
+Test loss: 0.17436546087265015
+Test accuracy for digit 1: 0.9839000105857849
+Test accuracy for digit 2: 0.9832500219345093
+Test accuracy for digit 3: 0.9800999760627747
+
+Appears to incorrectly predict many digits as 0.
+
+---------------------------------------------------------
+
+Model 4:
+
+Same as Model 3, but with thresholding at 0.4 instead.
+
+Test loss: 0.13233725726604462
+Test accuracy for digit 1: 0.9876000285148621
+Test accuracy for digit 2: 0.9869999885559082
+Test accuracy for digit 3: 0.9855499863624573
+
+Same problem with incorrectly predicting a variety of digits as 0.
+
+---------------------------------------------------------
+
+Model 5:
+
+Lowering the thresholding to 0.4 preserves more of the shape and sharpens it up.
+Going to try increasing the dropout to 0.4 as well.
+
+    # Define the model
+    inputs = Input(shape=(84, 84, 1))
+
+    # Convolutional layers with Dropout
+    x = Conv2D(128, kernel_size=(3, 3), activation='relu')(inputs)
+    x = MaxPooling2D(pool_size=(2, 2))(x)
+    x = BatchNormalization()(x)
+    x = Dropout(0.4)(x)
+
+    x = Conv2D(64, kernel_size=(3, 3), activation='relu')(x)
+    x = MaxPooling2D(pool_size=(2, 2))(x)
+    x = BatchNormalization()(x)
+    x = Dropout(0.4)(x)
+
+    x = Conv2D(32, kernel_size=(3, 3), activation='relu')(x)
+    x = MaxPooling2D(pool_size=(2, 2))(x)
+    x = BatchNormalization()(x)
+    x = Dropout(0.4)(x)
+
+    x = Flatten()(x)
+
+    # Output layers for each digit
+    digit1 = Dense(10, activation='softmax', name='digit1')(x)
+    digit2 = Dense(10, activation='softmax', name='digit2')(x)
+    digit3 = Dense(10, activation='softmax', name='digit3')(x)
+
+Trainable paramters: 155,454
+
+Test loss: 0.14935624599456787
+Test accuracy for digit 1: 0.9849500060081482
+Test accuracy for digit 2: 0.985450029373169
+Test accuracy for digit 3: 0.982200026512146
+
+
+Same problem with incorrectly predicting a variety of digits as 0.
+
+---------------------------------------------------------
+
+Model 6:
+
+This is Mohameds 99% model, where he increases epochs to 20 and increases the number of filters in the first convolutional layer.
+
+    inputs = Input(shape=(84, 84, 1))
+
+    x = Conv2D(128, kernel_size=(3, 3), activation='relu')(inputs)
+    x = MaxPooling2D(pool_size=(2, 2))(x)
+    x = Dropout(0.25)(x)
+
+    x = Conv2D(64, kernel_size=(3, 3), activation='relu')(x)
+    x = MaxPooling2D(pool_size=(2, 2))(x)
+    x = Dropout(0.25)(x)
+
+    x = Conv2D(64, kernel_size=(3, 3), activation='relu')(x)
+    x = MaxPooling2D(pool_size=(2, 2))(x)
+    x = Dropout(0.25)(x)
+
+    x = Flatten()(x)
+
+    digit1 = Dense(10, activation='softmax', name='digit1')(x)
+    digit2 = Dense(10, activation='softmax', name='digit2')(x)
+    digit3 = Dense(10, activation='softmax', name='digit3')(x)
+
+TRAINABLE PARAMETERS
+
+TEST PERFORMANCES
