@@ -150,6 +150,9 @@ This is Mohameds 99% model, where he increases epochs to 20 and increases the nu
     digit2 = Dense(10, activation='softmax', name='digit2')(x)
     digit3 = Dense(10, activation='softmax', name='digit3')(x)
 
-TRAINABLE PARAMETERS
+Trainable parameters: 234,910 
 
-TEST PERFORMANCES
+Test loss: 0.08518335223197937
+Test accuracy for digit 1: 0.992900013923645
+Test accuracy for digit 2: 0.9926000237464905
+Test accuracy for digit 3: 0.9902499914169312
