@@ -156,3 +156,27 @@ Test loss: 0.08518335223197937
 Test accuracy for digit 1: 0.992900013923645
 Test accuracy for digit 2: 0.9926000237464905
 Test accuracy for digit 3: 0.9902499914169312
+
+---------------------------------------------------------
+
+Model 7:
+
+Same as previously, but with dropout at 0.4 instead of 0.25.
+Marginal decrease in performance.
+
+Test loss: 0.10643995553255081
+Test accuracy for digit 1: 0.9901000261306763
+Test accuracy for digit 2: 0.989799976348877
+Test accuracy for digit 3: 0.9870499968528748
+
+---------------------------------------------------------
+
+Model 8:
+
+Same as previously, but this time with no dropout at any point.
+Finding is that the dropout is very important to avoid overfitting. 0.25 is the best value tested.
+
+Test loss: 0.29531407356262207
+Test accuracy for digit 1: 0.981249988079071
+Test accuracy for digit 2: 0.9802500009536743
+Test accuracy for digit 3: 0.9768000245094299
