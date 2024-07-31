@@ -180,3 +180,40 @@ Test loss: 0.29531407356262207
 Test accuracy for digit 1: 0.981249988079071
 Test accuracy for digit 2: 0.9802500009536743
 Test accuracy for digit 3: 0.9768000245094299
+
+---------------------------------------------------------
+
+Model 9:
+
+Mohamed modified the structure of the model to include another convolutional cycle.
+Note there is less filters in the first convolutional layer.
+Epochs was kept to 20. Optimiser kept to Adam.
+
+    x = Conv2D(64, kernel_size=(3, 3), activation='relu')(inputs)
+    x = MaxPooling2D(pool_size=(2, 2))(x)
+    x = Dropout(0.25)(x)
+
+    x = Conv2D(64, kernel_size=(3, 3), activation='relu')(x)
+    x = MaxPooling2D(pool_size=(2, 2))(x)
+    x = Dropout(0.25)(x)
+
+    x = Conv2D(64, kernel_size=(3, 3), activation='relu')(x)
+    x = MaxPooling2D(pool_size=(2, 2))(x)
+    x = Dropout(0.25)(x)
+
+    x = Conv2D(64, kernel_size=(3, 3), activation='relu')(x)
+    x = MaxPooling2D(pool_size=(2, 2))(x)
+    x = Dropout(0.25)(x)
+
+    x = Flatten()(x)
+
+    digit1 = Dense(10, activation='softmax', name='digit1')(x)
+    digit2 = Dense(10, activation='softmax', name='digit2')(x)
+    digit3 = Dense(10, activation='softmax', name='digit3')(x)
+
+Trainable parameters: 128,734
+
+Test loss: 0.06053690239787102
+Test accuracy for digit 1: 0.9948999881744385
+Test accuracy for digit 2: 0.9951000213623047
+Test accuracy for digit 3: 0.9937499761581421
